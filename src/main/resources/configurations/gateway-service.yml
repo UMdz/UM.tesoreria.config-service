@@ -1,0 +1,31 @@
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      default-zone: http://localhost:8761/eureka
+
+server:
+  port: 8080
+
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: facturador-service
+          uri: lb://facturador-service
+          predicates:
+            - Path=/api/facturador/**
+        - id: factura-sender-service
+          uri: lb://factura-sender-service
+          predicates:
+            - Path=/api/facturaSender/**
+
+logging:
+  level:
+    web: debug
