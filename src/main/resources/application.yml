@@ -9,5 +9,13 @@ spring:
   cloud:
     config:
       server:
-        native:
-          search-locations: classpath:/configurations
+        git:
+          uri:
+
+health:
+  config:
+    enabled: false
+
+logging:
+  level:
+    web: debug
