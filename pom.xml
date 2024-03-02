@@ -23,6 +23,10 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-bootstrap</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -42,6 +46,18 @@
 		</dependencies>
 	</dependencyManagement>
 
+<!--	<profiles>-->
+<!--		<profile>-->
+<!--			<id>prod</id>-->
+<!--			<activation>-->
+<!--				<activeByDefault>true</activeByDefault>-->
+<!--			</activation>-->
+<!--			<properties>-->
+<!--				<spring.profile.active>prod</spring.profile.active>-->
+<!--			</properties>-->
+<!--		</profile>-->
+<!--	</profiles>-->
+
 	<build>
 		<plugins>
 			<plugin>
@@ -49,6 +65,12 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+<!--		<resources>-->
+<!--			<resource>-->
+<!--				<directory>src/main/resources</directory>-->
+<!--				<filtering>true</filtering>-->
+<!--			</resource>-->
+<!--		</resources>-->
 	</build>
 
 </project>
