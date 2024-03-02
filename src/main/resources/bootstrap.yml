@@ -11,6 +11,11 @@ spring:
           uri: https://github.com/UMdz/UM.tesoreria.config-service
           default-label: main
           search-paths: config-data
+#          clone-on-start: true
+        bootstrap: true
+      enabled: true
+#  profiles:
+#    active: prod
 
 logging:
   level:
