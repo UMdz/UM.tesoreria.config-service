@@ -30,4 +30,5 @@ spring:
 
 logging:
   level:
-    web: debug
+    web: DEBUG
+    org.springframework.cloud.config: DEBUG
