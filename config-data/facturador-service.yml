@@ -7,14 +7,18 @@ spring:
 
 eureka:
   instance:
+    hostname: eureka-service
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
   client:
+    fetch-registry: true
+    register-with-eureka: true
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka
 
 logging:
   level:
-    web: debug
+    web: DEBUG
+    org.springframework.cloud.config: DEBUG
 
 resilience4j.circuitbreaker:
   instances:
